@@ -1,25 +1,89 @@
 @import "tailwindcss";
 
+/* ==========================================
+   TEMA CAJ TECH - Tailwind v4
+   ========================================== */
+
+@theme {
+  --color-primary: #d4a843;
+  --color-primary-hover: #b8922e;
+  --color-primary-dark: #1a1a1a;
+  --color-primary-dark-hover: #2a2a2a;
+  --color-accent: #f5f5f5;
+  --color-muted: #6b7280;
+  --color-muted-light: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-section-alt: #f9fafb;
+
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-slide-down: slideDown 0.4s ease-out forwards;
+  --animate-pulse-gold: pulse-gold 2s ease-in-out infinite;
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 168, 67, 0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(212, 168, 67, 0); }
+  }
+}
+
+/* ==========================================
+   VARIÁVEIS CSS (compatibilidade)
+   ========================================== */
+
 :root {
-  --font-inter: 'Inter', sans-serif;
+  --background: #ffffff;
+  --foreground: #111111;
+  --primary: #d4a843;
+  --primary-hover: #b8922e;
+  --primary-dark: #1a1a1a;
+  --primary-dark-hover: #2a2a2a;
+  --accent: #f5f5f5;
+  --muted: #6b7280;
+  --muted-light: #9ca3af;
+  --border: #e5e7eb;
 }
 
-@theme inline {
-  --font-sans: var(--font-inter);
-}
+/* ==========================================
+   RESET E BASE
+   ========================================== */
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-inter);
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter, system-ui, -apple-system, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* ==========================================
+   UTILITÁRIOS
+   ========================================== */
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--accent); }
+::-webkit-scrollbar-thumb { background: var(--muted-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
