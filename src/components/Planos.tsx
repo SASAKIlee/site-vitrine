@@ -12,7 +12,6 @@ const plans = [
     ],
     cta: 'Escolher Starter',
     featured: false,
-    // TODO: Substituir # pelo link real de checkout/assinatura do plano Starter
     link: '#',
   },
   {
@@ -31,7 +30,6 @@ const plans = [
     ],
     cta: 'Escolher PRO',
     featured: true,
-    // TODO: Substituir # pelo link real de checkout/assinatura do plano PRO
     link: '#',
   },
   {
@@ -48,23 +46,27 @@ const plans = [
     ],
     cta: 'Falar com consultor',
     featured: false,
-    // TODO: Substituir # pelo link real de contato/Calendly para plano Elite
     link: '#',
   },
 ];
 
 export default function Planos() {
   return (
-    <section id="planos" className="py-16 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Investimento</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-dark tracking-tight">
+    <section id="planos" className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+      {/* Background subtle glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[128px] pointer-events-none" aria-hidden="true" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header Premium */}
+        <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+          <span className="inline-block text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4 bg-primary/5 px-4 py-1.5 rounded-full">
+            Investimento
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
             Planos e preços
           </h2>
-          <p className="mt-4 text-lg lg:text-xl text-gray-600">
-            Escolha o plano ideal para sua barbearia
+          <p className="mt-5 text-lg text-gray-500 leading-relaxed">
+            Escolha o plano ideal para sua barbearia crescer.
           </p>
         </div>
 
@@ -73,98 +75,80 @@ export default function Planos() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl transition-all duration-300 hover:-translate-y-1 ${
-                plan.featured
-                  ? 'bg-primary-dark text-white shadow-2xl border-2 border-primary scale-105 z-10'
-                  : 'bg-white text-primary-dark border border-gray-200 hover:border-primary/30 hover:shadow-lg'
-              }`}
+              className={`relative rounded-[2rem] p-8 lg:p-10 transition-all duration-500 hover:-translate-y-2 ${plan.featured
+                ? 'bg-gray-900 text-white shadow-2xl shadow-primary/20 border-2 border-primary/50 z-10 lg:scale-105'
+                : 'bg-white text-gray-900 border border-gray-200 hover:border-primary/30 hover:shadow-2xl'
+                }`}
             >
-              {/* Featured badge */}
+              {/* Featured Badge - Sem Emoji, Gradiente Premium */}
               {plan.featured && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-primary text-primary-dark text-sm font-bold px-6 py-1.5 rounded-full shadow-lg whitespace-nowrap">
-                    ⭐ MAIS POPULAR
+                  <span className="bg-gradient-to-r from-primary via-yellow-300 to-primary text-gray-900 text-xs font-extrabold px-6 py-2 rounded-full shadow-lg uppercase tracking-wider whitespace-nowrap">
+                    Mais Popular
                   </span>
                 </div>
               )}
 
-              <div className="p-6 lg:p-8">
-                {/* Plan name */}
-                <h3 className="text-2xl font-extrabold">{plan.name}</h3>
+              {/* Plan name */}
+              <h3 className="text-2xl font-extrabold tracking-tight">{plan.name}</h3>
 
-                {/* Ideal for */}
-                <p className={`mt-1 text-sm ${plan.featured ? 'text-gray-300' : 'text-gray-500'}`}>
-                  {plan.ideal}
-                </p>
+              {/* Ideal for */}
+              <p className={`mt-2 text-sm font-medium ${plan.featured ? 'text-gray-400' : 'text-gray-500'}`}>
+                {plan.ideal}
+              </p>
 
-                {/* Price */}
-                <div className="mt-6 mb-6">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-lg">R$</span>
-                    <span className="text-5xl font-extrabold tracking-tight">{plan.price}</span>
-                    {plan.priceCents && (
-                      <span className="text-2xl font-bold">{plan.priceCents}</span>
-                    )}
-                    <span className={`text-sm ${plan.featured ? 'text-gray-400' : 'text-gray-500'}`}>/mês</span>
-                  </div>
+              {/* Price */}
+              <div className="mt-8 mb-8">
+                <div className="flex items-baseline gap-1">
+                  <span className={`text-lg font-bold ${plan.featured ? 'text-gray-400' : 'text-gray-500'}`}>R$</span>
+                  <span className="text-6xl font-extrabold tracking-tighter">{plan.price}</span>
+                  {plan.priceCents && (
+                    <span className="text-2xl font-bold mt-1">{plan.priceCents}</span>
+                  )}
+                  <span className={`text-sm font-medium ml-1 ${plan.featured ? 'text-gray-400' : 'text-gray-500'}`}>/mês</span>
                 </div>
-
-                {/* CTA Button */}
-                {/* TODO: Substituir href pelo link real de checkout */}
-                <a
-                  href={plan.link}
-                  className={`w-full py-3.5 rounded-xl font-bold text-center block transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 ${
-                    plan.featured
-                      ? 'bg-primary text-primary-dark hover:bg-primary-hover'
-                      : 'bg-primary-dark text-white hover:bg-primary-dark-hover'
-                  }`}
-                >
-                  {plan.cta}
-                </a>
-
-                {/* Benefits */}
-                <ul className="mt-8 space-y-3">
-                  {plan.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <svg
-                        className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                          plan.featured ? 'text-primary' : 'text-green-500'
-                        }`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className={`text-sm ${plan.featured ? 'text-gray-200' : 'text-gray-600'}`}>
-                        {benefit}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </div>
+
+              {/* CTA Button - Pílula Premium */}
+              <a
+                href={plan.link}
+                className={`w-full py-4 rounded-full font-extrabold text-center block transition-all duration-300 hover:-translate-y-1 text-base ${plan.featured
+                  ? 'bg-primary hover:brightness-110 text-gray-900 shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:shadow-[0_0_50px_rgba(212,175,55,0.5)]'
+                  : 'bg-gray-900 hover:bg-gray-800 text-white shadow-lg hover:shadow-xl'
+                  }`}
+              >
+                {plan.cta}
+              </a>
+
+              {/* Benefits */}
+              <ul className="mt-8 space-y-4">
+                {plan.benefits.map((benefit, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${plan.featured ? 'bg-primary/20 text-primary' : 'bg-primary/10 text-primary'
+                      }`}>
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className={`text-sm ${plan.featured ? 'text-gray-300' : 'text-gray-600'}`}>
+                      {benefit}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
 
-        {/* Partner note */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-6 py-4">
-            <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-            <p className="text-sm text-gray-600">
-              <span className="font-semibold text-primary-dark">Consultor parceiro?</span>{' '}
-              Ganhe 100% da instalação + 50% da recorrência.{' '}
-              {/* TODO: Substituir # pelo link real de programa de parceiros */}
-              <a href="#" className="text-primary font-semibold hover:underline">
-                Saiba mais →
-              </a>
-            </p>
-          </div>
+        {/* Partner note - Limpo e Elegante */}
+        <div className="mt-16 text-center">
+          <p className="text-sm text-gray-500">
+            <span className="font-bold text-gray-700">Consultor parceiro?</span>{' '}
+            Ganhe 100% da instalação + 50% da recorrência.{' '}
+            <a href="#" className="text-primary font-bold hover:underline">
+              Saiba mais →
+            </a>
+          </p>
         </div>
       </div>
     </section>
