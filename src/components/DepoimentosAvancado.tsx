@@ -40,31 +40,35 @@ export default function DepoimentosAvancado() {
     },
   ];
 
+  // Removido o "2000+", mantido apenas dados reais/alcançáveis
   const stats = [
     { value: '40%', label: 'Redução média de faltas' },
     { value: '35%', label: 'Aumento de lucro' },
     { value: '7 dias', label: 'Teste grátis' },
-    { value: '2.000+', label: 'Barbearias ativas' }, // ← adicionada 4ª stat
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-[#0B1120]">
+    <section className="py-16 lg:py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-4 lg:mb-8">
+        <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Quem já está crescendo com CAJ TECH
+            Quem já está crescendo com{' '}
+            <span className="text-amber-400">CAJ TECH</span>
           </h2>
-          <p className="mt-4 text-lg lg:text-xl text-gray-300">
+          <p className="mt-4 text-lg lg:text-xl text-gray-400">
             Veja os resultados reais de barbearias que transformaram seu negócio
           </p>
         </div>
 
-        {/* Stats — agora com 4 itens, grid fica equilibrado */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 mb-12 lg:mb-16">
+        {/* Stats - Grid ajustado para 3 colunas simétricas */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-16">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <p className="text-3xl lg:text-4xl font-bold text-emerald-400">
+            <div
+              key={index}
+              className="text-center bg-gray-950 border border-gray-800 rounded-xl p-6 lg:p-8 hover:border-amber-400/20 transition-colors duration-300"
+            >
+              <p className="text-3xl lg:text-4xl font-bold text-amber-400">
                 {stat.value}
               </p>
               <p className="text-sm lg:text-base text-gray-400 mt-2">
@@ -79,7 +83,7 @@ export default function DepoimentosAvancado() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-900 border border-gray-800 rounded-xl lg:rounded-2xl p-6 lg:p-8 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300"
+              className="bg-gray-950 border border-gray-800 rounded-xl lg:rounded-2xl p-6 lg:p-8 hover:border-amber-400/30 hover:shadow-xl hover:shadow-amber-400/5 transition-all duration-300"
             >
               <p className="text-white text-lg lg:text-xl leading-relaxed mb-6 font-medium">
                 &ldquo;{testimonial.quote}&rdquo;
@@ -89,7 +93,7 @@ export default function DepoimentosAvancado() {
                 {testimonial.metrics.map((metric, i) => (
                   <span
                     key={i}
-                    className="inline-block bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs lg:text-sm font-semibold"
+                    className="inline-block bg-amber-400/10 text-amber-400 border border-amber-400/20 px-3 py-1 rounded-full text-xs lg:text-sm font-semibold"
                   >
                     ✓ {metric}
                   </span>
@@ -115,7 +119,7 @@ export default function DepoimentosAvancado() {
           <p className="text-gray-300 mb-6 text-lg">
             Quer sua barbearia nessa lista de sucesso?
           </p>
-          <button className="inline-block bg-emerald-500 hover:bg-emerald-400 text-gray-900 font-bold px-10 py-3.5 rounded-lg shadow-lg shadow-emerald-500/30 hover:shadow-emerald-400/40 transition-all duration-300 hover:-translate-y-1">
+          <button className="inline-block bg-amber-400 hover:bg-amber-300 text-black font-bold px-10 py-3.5 rounded-lg shadow-lg shadow-amber-400/20 hover:shadow-amber-300/30 transition-all duration-300 hover:-translate-y-1">
             Começar Teste Grátis de 7 Dias
           </button>
         </div>
