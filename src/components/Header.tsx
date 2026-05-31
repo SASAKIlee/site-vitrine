@@ -104,7 +104,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="#"
+                href="https://wa.me/5517992051576?text=Olá!%20Vim%20pelo%20site%20CAJ%20TECH"
                 className="mx-2 mt-3 bg-gray-900 hover:bg-gray-800 text-white font-bold px-5 py-3.5 rounded-full text-center transition-colors shadow-sm"
               >
                 Teste 7 dias grátis

@@ -49,30 +49,6 @@ const personas = [
       'Feedback de clientes por serviço',
     ],
   },
-  {
-    id: 'ceo',
-    name: 'CEO / Gerente',
-    color: 'from-gray-900 to-emerald-950/40',
-    description: 'Estratégia baseada em dados',
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
-      </svg>
-    ),
-    challenges: [
-      'Sem visão consolidada de múltiplas unidades',
-      'Dados desatualizados ou inconsistentes',
-      'Impossível prever tendências',
-      'Muita papelada e processos lentos',
-    ],
-    solutions: [
-      'Visão consolidada de todas as unidades',
-      'Analytics em tempo real: faturamento, tendências',
-      'Identifique barbeiros top e oportunidades',
-      'Automação reduz custos operacionais',
-      'Decisões estratégicas com dados concretos',
-    ],
-  },
 ];
 
 export default function Visoes() {
@@ -92,18 +68,16 @@ export default function Visoes() {
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Cards Grid - 2 colunas centralizadas */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {personas.map((persona) => (
             <div
               key={persona.id}
               className="group h-full bg-white rounded-[2rem] border border-gray-100/80 overflow-hidden hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
             >
-              {/* Card Header - Dark Premium */}
+              {/* Card Header */}
               <div className={`bg-gradient-to-br ${persona.color} p-8 text-white relative overflow-hidden`}>
-                {/* Decorative Glow */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" aria-hidden="true" />
-
                 <div className="relative z-10">
                   <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 border border-white/10">
                     {persona.icon}
@@ -115,11 +89,8 @@ export default function Visoes() {
 
               {/* Card Body */}
               <div className="p-8">
-                {/* Challenges (Antes) */}
                 <div className="mb-8">
-                  <h4 className="text-xs font-bold text-red-400 uppercase tracking-[0.15em] mb-4">
-                    Antes
-                  </h4>
+                  <h4 className="text-xs font-bold text-red-400 uppercase tracking-[0.15em] mb-4">Antes</h4>
                   <ul className="space-y-3">
                     {persona.challenges.map((challenge, index) => (
                       <li key={index} className="flex items-start gap-3 text-sm text-gray-500">
@@ -132,11 +103,8 @@ export default function Visoes() {
                   </ul>
                 </div>
 
-                {/* Solutions (Com a CAJ TECH) */}
                 <div>
-                  <h4 className="text-xs font-bold text-primary uppercase tracking-[0.15em] mb-4">
-                    Com a CAJ TECH
-                  </h4>
+                  <h4 className="text-xs font-bold text-primary uppercase tracking-[0.15em] mb-4">Com a CAJ TECH</h4>
                   <ul className="space-y-3">
                     {persona.solutions.map((solution, index) => (
                       <li key={index} className="flex items-start gap-3 text-sm text-gray-700 font-medium">

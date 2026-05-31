@@ -41,10 +41,10 @@ export default function ProvaSocial() {
         {/* Mini stats */}
         <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {[
-            { value: '500+', label: 'Barbearias interessadas' },
             { value: '40%', label: 'Redução de faltas' },
             { value: '2min', label: 'Tempo de setup' },
             { value: '7 dias', label: 'Teste grátis' },
+            { value: '100%', label: 'Focado no Brasil' },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-4xl lg:text-5xl font-extrabold text-primary tracking-tight">

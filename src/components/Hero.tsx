@@ -34,7 +34,7 @@ export default function Hero() {
           {/* CTAs - Pílulas Premium */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
+              href="https://wa.me/5517992051576?text=Olá!%20Vim%20pelo%20site%20CAJ%20TECH"
               className="group inline-flex items-center justify-center gap-2.5 bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl text-lg"
             >
               <svg className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
@@ -43,7 +43,7 @@ export default function Hero() {
               Ver demonstração
             </a>
             <a
-              href="#"
+              href="https://wa.me/5517992051576?text=Olá!%20Vim%20pelo%20site%20CAJ%20TECH"
               className="group inline-flex items-center justify-center gap-2.5 bg-primary hover:brightness-110 text-gray-900 font-bold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-[0_0_40px_rgba(212,175,55,0.3)] hover:shadow-[0_0_60px_rgba(212,175,55,0.5)] text-lg"
             >
               Começar grátis
