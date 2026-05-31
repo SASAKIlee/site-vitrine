@@ -37,7 +37,6 @@ export default function DepoimentosAvancado() {
   ];
 
   const stats = [
-    { value: '500+', label: 'Barbearias usando' },
     { value: '40%', label: 'Redução média de faltas' },
     { value: '35%', label: 'Aumento de lucro' },
     { value: '7 dias', label: 'Teste grátis' },
