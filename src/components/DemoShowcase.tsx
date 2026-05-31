@@ -188,7 +188,7 @@ export default function DemoShowcase() {
         <div className="mt-16 text-center">
           <p className="text-gray-500 mb-6 text-base">Pronto para transformar sua barbearia?</p>
           <a
-            href="#"
+            href="https://www.instagram.com/caj.tech/"
             className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
           >
             Começar teste grátis de 7 dias

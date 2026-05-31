@@ -100,7 +100,7 @@ export default function FAQ() {
         <div className="mt-16 text-center">
           <p className="text-gray-500 mb-6 text-base">Ainda tem dúvidas?</p>
           <a
-            href="#"
+            href="https://wa.me/5517992051576?text=Olá!%20Vim%20pelo%20site%20CAJ%20TECH"
             className="inline-flex items-center gap-2.5 bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl group"
           >
             <svg className="w-5 h-5 text-green-400 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">

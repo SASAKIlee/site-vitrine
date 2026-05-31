@@ -145,7 +145,7 @@ export default function Planos() {
           <p className="text-sm text-gray-500">
             <span className="font-bold text-gray-700">Consultor parceiro?</span>{' '}
             Ganhe 100% da instalação + 50% da recorrência.{' '}
-            <a href="#" className="text-primary font-bold hover:underline">
+            <a href="https://wa.me/5517992051576?text=Olá!%20Vim%20pelo%20site%20CAJ%20TECH" className="text-primary font-bold hover:underline">
               Saiba mais →
             </a>
           </p>

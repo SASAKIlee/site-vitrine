@@ -89,7 +89,7 @@ export default function Footer() {
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] text-gray-400 mb-5">Suporte</h3>
             <ul className="space-y-3.5">
               {[
-                { label: 'WhatsApp', href: '#' },
+                { label: 'WhatsApp', href: 'https://wa.me/5517992051576?text=Olá!%20Vim%20pelo%20site%20CAJ%20TECH' },
                 { label: 'E-mail', href: 'mailto:suporte@cajtech.com.br' },
                 { label: 'Central de ajuda', href: '#faq' },
                 { label: 'Status do sistema', href: '#' },

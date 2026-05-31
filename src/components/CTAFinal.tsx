@@ -32,7 +32,7 @@ export default function CTAFinal() {
         {/* CTA Button com Glow */}
         <div className="mt-10">
           <a
-            href="#"
+            href="https://wa.me/5517992051576?text=Olá!%20Vim%20pelo%20site%20CAJ%20TECH"
             className="group inline-flex items-center gap-3 bg-primary hover:brightness-110 text-gray-900 font-extrabold px-10 lg:px-14 py-5 rounded-full text-lg lg:text-xl transition-all duration-300 shadow-[0_0_40px_rgba(212,175,55,0.3)] hover:shadow-[0_0_60px_rgba(212,175,55,0.5)] hover:-translate-y-1"
           >
             Começar teste grátis de 7 dias
